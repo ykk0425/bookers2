@@ -12,6 +12,7 @@
 
   <body>
     <header>
+      <%= link_to "Bookers", root_path %>
       <% if user_signed_in? %>
         <li>
           <%= link_to "Home", user_path(current_user) %>
@@ -41,5 +42,8 @@
       <% end %>
     </header>
     <%= yield %>
+    <footer>
+      <p>CopyRight Infratop.inc</p>
+    </footer>
   </body>
 </html>
