@@ -16,10 +16,19 @@
 <% end %>
 
 <h2>Books</h2>
-<% @books.each do |book| %>
-  <div>
-    <p>Title : <%= book.name %></p>
-    <p>Opinion :<% book.body %></p>
-  </div>
-<% end %>
+  <table>
+    <thead>
+      <th>Title</th>
+      <th>Opinion</th>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= image_tag book.user.get_profile_image(100,100) %></td>
+          <td><%= book.title %></td>
+          <td><% book.body %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
