@@ -8,12 +8,12 @@ class BooksController < ApplicationController
   end
 
   def index
+    @book = Book.new
     @user = current_user
+    @books = Book.all
   end
 
   def show
-    @book = Book.new
-    @book = Book.find
   end
 
   def edit

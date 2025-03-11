@@ -4,7 +4,7 @@
 <p>name <%= @user.name %></p>
 <p>introduction <%= @user.introduction %></p>
 
-<%= link_to "編集", edit_user_path(current_user) %>
+<%= link_to "編集", edit_user_path(@user) %>
 
 <h2>New Book</h2>
 <%= form_with model: @book do |f| %>
@@ -13,5 +13,13 @@
   <label>Opinion</label>
   <%= f.text_area :body %>
   <%= f.submit 'Create Book' %>
+<% end %>
+
+<h2>Books</h2>
+<% @books.each do |book| %>
+  <div>
+    <p>Title : <%= book.name %></p>
+    <p>Opinion :<% book.body %></p>
+  </div>
 <% end %>
 
