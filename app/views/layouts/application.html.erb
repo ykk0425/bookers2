@@ -71,11 +71,13 @@
         </div>
       </nav>
     </header>
-
-    <div>
-      <%= flash[:notice] %>
-    </div>
-    <%= yield %>
+    
+    <main>
+      <div>
+        <%= flash[:notice] %>
+      </div>
+      <%= yield %>
+    </main>
 
     <footer>
       <div class="container mt-5">
